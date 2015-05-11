@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="treehouseCourse">
+<head>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script src= "angular.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+<style>
+
+html,body{
+	font-size: 12px;
+	text-align: center;
+}
+
+input{
+	font-size: 1.2em;
+	outline:none;
+}
+
+input[name="newtodo"]{
+	font-size: 2em;
+}
+
+.todos li{
+	list-style-type: none;
+}
+
+.todos li input{
+	border:none;
+}
+
+.todos li input:focus{
+	border:1px solid;
+}
+
+</style>
+</head>
+<body>
+	<h1>Simple To Do List application using AngularJs</h1>
+	<div ng-controller="stageTwoCtrl">
+		<div>
+			<form id="todo-form" ng:submit="addToDo()">
+				<input type="text" todo-content id="newtodo" name="newtodo" />
+			</form>
+		</div>
+	    <ul class="todos">
+	    <li ng-repeat="todo in todos">
+			<input type="checkbox" ng-click="todoCompleted($index);" /><input type="text" ng-model="todo.name"/>
+	    </li>
+	    </ul>
+	    <p>You have {{completed.length || 0}} items completed.</p>
+	</div>
+</body>
+</html>
