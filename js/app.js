@@ -5,7 +5,7 @@ app.controller('stageTwoCtrl', ['$scope', '$http', function($scope, $http) {
   $scope.todos = [];
   $scope.completed = [];
   
-  $http.get("readme.json")
+  $http.get("public/external.json")
   .success(function(data){
     $scope.todos = data.todos
   })
